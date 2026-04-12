@@ -8,17 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e316a1a-904e-46f5-90ee-1d171b117229" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ApiGateway/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ApiGateway/ApiGateway/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ApiGateway/ApiGateway/ApiGateway.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiGateway/ApiGateway/ApiGateway.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ApiGateway/ApiGateway/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiGateway/ApiGateway/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ApiGateway/ApiGateway/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiGateway/ApiGateway/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackendB/.idea/.idea.BackendB/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendB/.idea/.idea.BackendB/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackendB/BackendB/BackendB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendB/BackendB/BackendB.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackendB/BackendB/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BackendB/BackendB/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-    </list>
+    <list default="true" id="8e316a1a-904e-46f5-90ee-1d171b117229" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1775905424141</updated>
       <workItem from="1775905425282" duration="1000" />
-      <workItem from="1775905934950" duration="1345000" />
+      <workItem from="1775905934950" duration="2320000" />
     </task>
     <servers />
   </component>
