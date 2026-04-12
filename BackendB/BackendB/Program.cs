@@ -1,5 +1,17 @@
+using System.IO;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
+app.MapGet("/api/test", () => Results.Ok("test-B"));
+
+app.MapPost("/api/test-orders", async (HttpRequest request) =>
+{
+    using var reader = new StreamReader(request.Body);
+    var body = await reader.ReadToEndAsync();
+
+    return Results.Content(body, "application/json");
+});
 
 app.MapGet("/api/ping", () => Results.Ok("pong-B"));
 app.MapGet("/api/hello", () => Results.Ok("hello from backend B"));
