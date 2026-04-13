@@ -45,6 +45,48 @@ public class Test
         Assert.Equal(payload.Name, responseBody.Name);
     }
     
+    //F03
+    public class ProductsResponse     
+    {         
+        public string? Id { get; set; }         
+        public string? Sort { get; set; }     
+    } 
+    
+    [Fact]
+    public async Task Query_String_Should_Be_Forwarded_Correctly()
+    {
+        var response = await _client.GetAsync("/b/api/products?id=15&sort=asc");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
+        var body = await response.Content.ReadFromJsonAsync<ProductsResponse>();
+
+        Assert.NotNull(body);
+        Assert.Equal("15", body!.Id);
+        Assert.Equal("asc", body.Sort);
+    }
+    
+    //F04
+    public class HeaderResponse
+    {
+        public string? HeaderValue { get; set; }
+    }
+    [Fact]
+    public async Task Header_Should_Be_Forwarded_To_Backend()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "/b/api/test");
+        request.Headers.Add("X-Test", "KOWL");
+
+        var response = await _client.SendAsync(request);
+
+        response.EnsureSuccessStatusCode();
+
+        var body = await response.Content.ReadFromJsonAsync<HeaderResponse>();
+
+        Assert.NotNull(body);
+        Assert.Equal("KOWL", body!.HeaderValue);
+    }
+    
     //F05
     [Fact]
     public async Task Yarp_Adds_XForwarded_Headers_To_Backend_Request()
@@ -92,7 +134,6 @@ public class Test
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         
         Assert.Equal("abc-123", responseString);
-        
     }
     
     //F11
