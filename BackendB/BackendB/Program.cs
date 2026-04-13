@@ -13,6 +13,14 @@ app.MapPost("/api/test-orders", async (HttpRequest request) =>
     return Results.Content(body, "application/json");
 });
 
+app.MapGet("/api/error", () =>
+{
+    return Results.Problem(
+        title: "Backend error",
+        detail: "Test 500 from backend",
+        statusCode: StatusCodes.Status500InternalServerError);
+});
+
 app.MapGet("/api/ping", () => Results.Ok("pong-B"));
 app.MapGet("/api/hello", () => Results.Ok("hello from backend B"));
 app.MapGet("/health", () => Results.Ok("healthy-B"));
