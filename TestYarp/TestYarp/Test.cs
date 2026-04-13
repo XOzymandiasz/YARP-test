@@ -71,6 +71,7 @@ public class Test
     {
         public string? HeaderValue { get; set; }
     }
+    
     [Fact]
     public async Task Header_Should_Be_Forwarded_To_Backend()
     {
@@ -79,7 +80,7 @@ public class Test
 
         var response = await _client.SendAsync(request);
 
-        response.EnsureSuccessStatusCode();
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
         var body = await response.Content.ReadFromJsonAsync<HeaderResponse>();
 
