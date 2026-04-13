@@ -95,6 +95,18 @@ public class Test
         
     }
     
+    //F11
+    [Fact]
+    public async Task Backend_500_Should_Be_Forwarded_By_Yarp()
+    {
+        var response = await _client.GetAsync("/b/api/error");
+
+        Assert.Equal(HttpStatusCode.InternalServerError, response.StatusCode);
+
+        var body = await response.Content.ReadAsStringAsync();
+        Assert.NotNull(body);
+    }
+    
     //F12
     [Fact]
     public async Task Post_Request_Payload()
@@ -123,5 +135,4 @@ public class Test
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
     }
-    
 }
